@@ -3,20 +3,25 @@ import java.util.Scanner;
 
 public class Rectangle extends Shape {
 
-    int xCoord;
-    int yCoord;
+
+
+
     Point pA;
     Point pB;
     Point pC;
     Point pD;
+    int x;
+    int y;
 
-    public Rectangle(Scanner scanner, String name, Point pA, Point pB, Point pC, Point pD) {
+
+    public Rectangle(String name, Point pA, Point pB, Point pC, Point pD) {
         this.pA = pA;
         this.pB = pB;
         this.pC = pC;
         this.pD = pD;
-        xCoord = getInt(scanner, "Enter an x-value for the rectangle: ");
-        yCoord = getInt(scanner, "Enter a y-value for the rectangle: ");
+        this.xCoord = x;
+        this.yCoord = y;
+
     }
 
     public Point getCenter() {

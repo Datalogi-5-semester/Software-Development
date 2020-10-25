@@ -3,11 +3,12 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+
+    public void main(String[] args) {
 
         Scanner scanner = new Scanner((System.in));
 
-        Rectangle r1 = new Rectangle(scanner, "r1", new Point(6, 6), new Point(6, 8), new Point(8, 8), new Point(8, 6));
+        Rectangle r1 = new Rectangle("r1", new Point(6, 6), new Point(6, 8), new Point(8, 8), new Point(8, 6));
         r1.isInside();
 
         Circle c1 = new Circle(scanner, new Point(4,4), 4);

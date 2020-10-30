@@ -7,6 +7,7 @@ public class Vertex implements Comparable<Vertex> { //so we can sort them, we wi
     Vertex predecessor = null;
     Boolean visited = false;
 
+
     public Vertex getPredecessor() {
         return predecessor;
     }

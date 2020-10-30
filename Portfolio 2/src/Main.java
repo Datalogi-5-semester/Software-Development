@@ -95,9 +95,9 @@ public class Main {
         adjGraph.newEdge(Ringsted, Sorø, 15);
         adjGraph.newEdge(Ringsted, Vordingborg, 58);
         adjGraph.newEdge(Slagelse, Sorø, 14);
+        //adjGraph.printGraph();
 
         adjGraph.MSTPrims();
-        adjGraph.printGraph();
         adjGraph.printMST();
     }
 }

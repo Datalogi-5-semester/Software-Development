@@ -69,7 +69,7 @@ public class AdjacencyListGraph {
 
             }
         }
-
+        System.out.println("Maxmimum weight of the MST: " + MST);
     }
 
 

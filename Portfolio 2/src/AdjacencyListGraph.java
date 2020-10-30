@@ -72,7 +72,7 @@ public class AdjacencyListGraph {
         }
         int finalPrice = MST * 100000;
         System.out.println("Maximum weight of the MST is: " + MST + "\n" +
-                "The final price of the grid is: " + finalPrice + "\n");
+                "The final price of the grid is: " + finalPrice + "kr \n");
     }
 
 
@@ -80,7 +80,7 @@ public class AdjacencyListGraph {
     public void printMST() {
         for (int i = 0; i < vertices.size(); i++) {
             if (vertices.get(i).predecessor != null) {
-                System.out.println(vertices.get(i).predecessor.getName() + " to " + vertices.get(i).getName() + " Edge Weight: " + vertices.get(i).distance);
+                System.out.println(vertices.get(i).predecessor.getName() + " to " + vertices.get(i).getName() + " Edge Weight: " + vertices.get(i).distance +"km");
             }
         }
     }

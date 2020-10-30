@@ -1,3 +1,5 @@
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.PriorityQueue;
@@ -40,7 +42,6 @@ public class AdjacencyListGraph {
 
         PriorityQueue<Vertex> Q = new PriorityQueue<Vertex>();
 
-
         if (vertices.size() > 0) {
             vertices.get(0).distance = 0;
             Q.offer(vertices.get(0));
@@ -69,8 +70,11 @@ public class AdjacencyListGraph {
 
             }
         }
-        System.out.println("Maxmimum weight of the MST: " + MST);
+        int finalPrice = MST * 100000;
+        System.out.println("Maximum weight of the MST is: " + MST + "\n" +
+                "The final price of the grid is: " + finalPrice + "\n");
     }
+
 
 
     public void printMST() {
@@ -79,8 +83,5 @@ public class AdjacencyListGraph {
                 System.out.println(vertices.get(i).predecessor.getName() + " to " + vertices.get(i).getName() + " Edge Weight: " + vertices.get(i).distance);
             }
         }
-
     }
-
 }
-

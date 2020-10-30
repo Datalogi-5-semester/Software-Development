@@ -97,6 +97,7 @@ public class Main {
         adjGraph.newEdge(Slagelse, Sorø, 14);
         //adjGraph.printGraph();
 
+        //adjGraph.printGraph();
         adjGraph.MSTPrims();
         adjGraph.printMST();
     }

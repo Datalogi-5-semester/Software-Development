@@ -71,14 +71,14 @@ public class AdjacencyListGraph {
             }
         }
         int finalPrice = MST * 100000;
-        System.out.println("Weight of the MST is: " + MST + "\n" +
+        System.out.println("Weight of the MST is: " + MST + "km \n" +
                 "The final price of the grid is: " + finalPrice + "kr \n");
     }
 
     public void printMST() {
         for (int i = 0; i < vertices.size(); i++) {
             if (vertices.get(i).predecessor != null) {
-                System.out.println(vertices.get(i).predecessor.getName() + " to " + vertices.get(i).getName() + " Edge Weight: " + vertices.get(i).distance +"km");
+                System.out.println(vertices.get(i).predecessor.getName() + " to " + vertices.get(i).getName() + " Edge Weight: " + vertices.get(i).distance + "km");
             }
         }
     }

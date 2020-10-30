@@ -23,7 +23,6 @@ public class Vertex implements Comparable<Vertex> { //so we can sort them, we wi
         this.visited = visited;
     }
 
-
     public String getName() {
         return name;
     }
@@ -56,7 +55,6 @@ public class Vertex implements Comparable<Vertex> { //so we can sort them, we wi
     public void addOutEdge(Edge outEdge) {
         outEdges.add(outEdge);
     }
-
 
     @Override
     public int compareTo(Vertex o) {

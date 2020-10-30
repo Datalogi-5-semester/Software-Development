@@ -66,10 +66,10 @@ public class MatrixGraph {
             }
         }
         System.out.println(" Minimum spanning Tree Distance: " + MST);
-        printMST(predecessor, distance);
+        printMMST(predecessor, distance);
     }
 
-    public void printMST(int[] pred, int[] dist) {
+    public void printMMST(int[] pred, int[] dist) {
         for (int i = 0; i < matrixEdgeGraph.length; i++) {
             System.out.println(i + " parent  " + pred[i] + " Edge Weight: " + dist[i]);
         }

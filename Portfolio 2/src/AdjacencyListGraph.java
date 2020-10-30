@@ -75,8 +75,6 @@ public class AdjacencyListGraph {
                 "The final price of the grid is: " + finalPrice + "kr \n");
     }
 
-
-
     public void printMST() {
         for (int i = 0; i < vertices.size(); i++) {
             if (vertices.get(i).predecessor != null) {

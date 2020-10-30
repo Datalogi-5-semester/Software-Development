@@ -41,12 +41,14 @@ public class AdjacencyListGraph {
         PriorityQueue<Vertex> Q = new PriorityQueue<Vertex>();
 
 
-
         if (vertices.size() > 0) {
             vertices.get(0).distance = 0;
             Q.offer(vertices.get(0));
         }
 
+        //MST bliver lavet når den hiver en vertex ud, da den kun hiver den ud med den korteste distance, PQ er bare en liste
+        //MST bliver "lavet" via predecessor og distance, distance er kun den distance i vores MST, dvs. de elementer der bliver hevet ud
+        //PQ
         int counter = 0;
         int MST = 0;
 
@@ -54,32 +56,31 @@ public class AdjacencyListGraph {
             Vertex u = Q.poll();
             if (!u.visited) {
                 for (int i = 0; i < u.getOutEdges().size(); i++) {
-                    Integer hej = u.getOutEdges().get(i).getWeight();
-                    Vertex hej2 = u.getOutEdges().get(i).getToVertex();
-                    if (hej < hej2.distance) {
-                        hej2.distance = hej;
-                        hej2.predecessor = u;
-                        Q.offer(hej2);
+                    if ((!u.getOutEdges().get(i).getToVertex().visited) && u.getOutEdges().get(i).getWeight() < u.getOutEdges().get(i).getToVertex().distance) {
+                        u.getOutEdges().get(i).getToVertex().distance = u.getOutEdges().get(i).getWeight();
+                        u.getOutEdges().get(i).getToVertex().predecessor = u;
+                        Q.offer(u.getOutEdges().get(i).getToVertex());
                     }
                 }
 
                 u.visited = true;
-                counter++;
-                MST += u.distance;
+                counter++;  //Counter bliver lavet for at stoppe vores while loop, da PQ har flere af de samme elementer
+                MST += u.distance; //Kun distance mellem de vertices vi har hevet ud
 
             }
         }
-        System.out.println(" Minimum spanning Tree Distance: " + MST);
-        printMST();
+
     }
 
-    public void printMST(Vertex pred, int dist) {
-        for (int i = 0; i < pred.getOutEdges().size(); i++) {
-            System.out.println(i + " parent  " + pred.predecessor + " Edge Weight: " + pred.distance);
+
+    public void printMST() {
+        for (int i = 0; i < vertices.size(); i++) {
+            if (vertices.get(i).predecessor != null) {
+                System.out.println(vertices.get(i).predecessor.getName() + " to " + vertices.get(i).getName() + " Edge Weight: " + vertices.get(i).distance);
+            }
         }
 
     }
 
 }
 
-//test

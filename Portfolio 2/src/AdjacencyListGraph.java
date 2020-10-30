@@ -54,10 +54,12 @@ public class AdjacencyListGraph {
             Vertex u = Q.poll();
             if (!u.visited) {
                 for (int i = 0; i < u.getOutEdges().size(); i++) {
-                    if (u.getOutEdges().get(i).getWeight() < u.getOutEdges().get(i).getToVertex().distance) {
-                        u.getOutEdges().get(i).getToVertex().distance = u.getOutEdges().get(i).getWeight();
-                        u.getOutEdges().get(i).getToVertex().predecessor = u;
-                        Q.offer(u.getOutEdges().get(i).getToVertex());
+                    Integer hej = u.getOutEdges().get(i).getWeight();
+                    Vertex hej2 = u.getOutEdges().get(i).getToVertex();
+                    if (hej < hej2.distance) {
+                        hej2.distance = hej;
+                        hej2.predecessor = u;
+                        Q.offer(hej2);
                     }
                 }
 

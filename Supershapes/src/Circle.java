@@ -11,19 +11,37 @@ public class Circle extends Shape {
         this.r = radius;
     }
 
+    public Circle(Point centerPoint, int radius) {
+        this.centerPoint = centerPoint;
+        this.r = radius;
+    }
+
     public double getArea() {
-        System.out.print("The area of this circle is: ");
         return (Math.PI * (r * r));
     }
 
+    public String printGetArea() {
+        System.out.print("The area of this circle is: ");
+        return printGetArea();
+    }
+
     public double getCircumference() {
-        System.out.print("The circumference of this circle is: ");
         return ((2 * Math.PI) * r);
+    }
+
+    public String printGetCircumference() {
+        System.out.print("The circumference of this circle is: ");
+        return printGetCircumference();
     }
 
     public Point getCenter() {
         Point centerPointC = new Point(centerPoint.x, centerPoint.y);
         return centerPointC;
+    }
+
+    public String printGetCenter() {
+        System.out.print("The center of the circle is: ");
+        return printGetCenter();
     }
 
     public double euclideanDistance(Shape A) {
@@ -36,17 +54,28 @@ public class Circle extends Shape {
     public boolean isInside(Point XY) {
         if (Math.sqrt((XY.x - centerPoint.x) * (XY.x - centerPoint.x) +
                 (XY.y - centerPoint.y) * (XY.y - centerPoint.y)) <= r) {
-            System.out.println("Your point is inside a circle");
-            System.out.println(getArea());
-            System.out.println(getCircumference());
-            System.out.print("The center of this circle is: ");
-            System.out.println(getCenter() + "\n");
-            //System.out.println(euclideanDistance());
+
             return true;
         } else {
-            System.out.println("Your point is not inside a circle \n");
+
             return false;
         }
+    }
+
+    public String printIsInsideTrue() {
+        System.out.println("Your point is inside a circle");
+        System.out.println(getArea());
+        System.out.println(getCircumference());
+        System.out.print("The center of this circle is: ");
+        System.out.println(getCenter() + "\n");
+        //System.out.println(euclideanDistance());
+        return printIsInsideTrue();
+    }
+
+    // Print method moved out of isInside for the false statement
+    public String printIsInsideFalse() {
+        System.out.println("Your point is not inside a circle \n");
+        return printIsInsideFalse();
     }
 }
 

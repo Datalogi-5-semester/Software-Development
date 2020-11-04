@@ -12,7 +12,13 @@ public class Triangle extends Shape {
         this.pA = pA;
         this.pB = pB;
         this.pC = pC;
+    }
 
+    // Triangle constructor overload for test class "TriangleTest" only
+    public Triangle(Point pA, Point pB, Point pC) {
+        this.pA = pA;
+        this.pB = pB;
+        this.pC = pC;
     }
 
     public Point getCenter() {
@@ -20,6 +26,11 @@ public class Triangle extends Shape {
         int y = (pA.y + pB.y + pC.y) / 3;
         Point centerPoint = new Point(x, y);
         return centerPoint;
+    }
+
+    public String printGetCenter() {
+        System.out.print("The center of the triangle is: ");
+        return printGetCenter();
     }
 
     public double getArea() {
@@ -42,8 +53,12 @@ public class Triangle extends Shape {
         int sideAB = (int) Math.sqrt((int) Math.pow((pB.x - pA.x), 2) + (int) Math.pow((pB.y - pA.y), 2));
         int sideBC = (int) Math.sqrt((int) Math.pow((pC.x - pB.x), 2) + (int) Math.pow((pB.y - pC.y), 2));
         int sideCA = (int) Math.sqrt((int) Math.pow((pC.x - pA.x), 2) + (int) Math.pow((pC.y - pA.y), 2));
-        System.out.print("The circumference of this triangle is: ");
         return (sideAB + sideBC + sideCA);
+    }
+
+    public String printGetCircumference() {
+        System.out.print("The circumference of this triangle is: ");
+        return printGetCircumference();
     }
 
     public double euclideanDistance(Shape A) {
@@ -55,18 +70,27 @@ public class Triangle extends Shape {
 
     public boolean isInside(Point XY) {
         if (getArea() == (getArea_pA_pB_xy(XY) + getArea_pA_xy_pC(XY) + getArea_xy_pB_pC(XY))) {
-            System.out.println("Your point is inside a triangle");
-            System.out.print("The area of this triangle is: ");
-            System.out.println(getArea());
-            System.out.println(getCircumference());
-            System.out.print("The center of this triangle is: ");
-            System.out.println(getCenter() + "\n");
-            //System.out.println(euclideanDistance());
             return true;
-
         } else {
-            System.out.println("Your point is not inside a triangle \n");
+
             return false;
         }
+    }
+
+    public String printIsInsideTrue() {
+        System.out.println("Your point is inside a triangle");
+        System.out.print("The area of this triangle is: ");
+        System.out.println(getArea());
+        System.out.println(getCircumference());
+        System.out.print("The center of this triangle is: ");
+        System.out.println(getCenter() + "\n");
+        //System.out.println(euclideanDistance());
+        return printIsInsideTrue();
+    }
+
+    // Print method moved out of isInside for the false statement
+    public String printIsInsideFalse() {
+        System.out.println("Your point is not inside a triangle \n");
+        return printIsInsideFalse();
     }
 }

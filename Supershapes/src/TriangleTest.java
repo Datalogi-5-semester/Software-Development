@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class TriangleTest {
 
-    //Initiated rectangle for unit testing, made from the overloaded constructor
+
     Triangle triangleTest = new Triangle(
             new Point(2, 2),
             new Point(4, 8),
@@ -14,7 +14,7 @@ public class TriangleTest {
 
     @Test
     public void getCenterTest() {
-        final Point expected = new Point((int) 4.7, 4); //The calculation rounds 4.7 to 4
+        final Point expected = new Point((int) 4, 4);
         final Point actual = triangleTest.getCenter();
         assertEquals(expected, actual);
     }
@@ -57,7 +57,7 @@ public class TriangleTest {
     @Test
     public void isInsideTrue() {
         final boolean expected = true;
-        final boolean actual = triangleTest.isInside(new Point (3,4));
+        final boolean actual = triangleTest.isInsideUnitTest(new Point (3,4));
         assertEquals(expected, actual);
     }
 }

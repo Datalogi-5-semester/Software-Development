@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class RectangleTest {
 
-    //Initiated rectangle for unit testing, made from the overloaded constructor
+
     Rectangle rectangleTest = new Rectangle(
             new Point(4, 3),
             new Point(4, 6),
@@ -42,7 +42,7 @@ public class RectangleTest {
     @Test
     public void isInsideTrueTest() {
         final boolean expected = true;
-        final boolean actual = rectangleTest.isInside(new Point(4,5));
+        final boolean actual = rectangleTest.isInsideUnitTest(new Point(1,1));
         assertEquals(expected, actual);
     }
     @Test

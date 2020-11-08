@@ -19,7 +19,4 @@ public abstract class Shape {
         System.out.print(mesg);
         return scanner.nextInt();
     }
-
-    /* protected int xCoord = getInt(scanner, "x coord: ");
-    protected int yCoord = getInt(scanner, "y coord: "); */
 }

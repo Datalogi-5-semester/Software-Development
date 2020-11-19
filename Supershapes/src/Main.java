@@ -1,3 +1,4 @@
+//Benjamin Andersen, Marie Riskær, Mikkel Iuel & Nanna Holst Larsen
 import java.awt.*;
 import java.util.Scanner;
 
@@ -21,7 +22,6 @@ public class Main {
                 new Point(8, 6));
         System.out.println("Information on rectangle r1: ");
         r1.isInside(XY);
-
 
         Rectangle r2 = new Rectangle("r2",
                 new Point(9, 9),
